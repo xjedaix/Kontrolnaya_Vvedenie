@@ -7,3 +7,42 @@
 // ["1234", "1567", "-2", "computer science"] -> ["-2"]
 // [Russia, Denmark, Kazan] -> []
 
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {   
+        Console.Clear();
+        // получаем массив строк с клавиатуры
+        Console.WriteLine("Введите элементы массива через запятую: ");
+        string input = Console.ReadLine();
+
+        // разбиваем введенную строку на массив строк
+        string[] array = input.Split(',');
+
+        // создаем новый массив для хранения строк длиной не более 3 символов
+        string[] newArray = new string[array.Length];
+
+        // проходим по исходному массиву и копируем в новый только строки длиной не более 3 символов
+        int count = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i].Length <= 3)
+            {
+                newArray[count] = array[i];
+                count++;
+            }
+        }
+
+        // выводим новый массив на экран
+        Console.WriteLine("Новый массив: ");
+        for (int i = 0; i < count; i++)
+        {
+            Console.WriteLine(newArray[i]);
+        }
+
+        // ждем ввода пользователя для завершения программы
+        Console.ReadLine();
+    }
+}
