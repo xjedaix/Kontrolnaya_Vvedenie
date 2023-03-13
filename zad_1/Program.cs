@@ -11,7 +11,7 @@ using System;
 class Program
 {
 static void Main(string[] args)
-    {   
+    {
     Console.Clear();
     Console.WriteLine("Введите элементы массива через запятую: ");
     string input = Console.ReadLine();
@@ -22,7 +22,7 @@ static void Main(string[] args)
     for (int i = 0; i < array.Length; i++)
     {
     if (array[i].Length <= 3)
-     {  
+     {
         newArray[count] = array[i];
         count++;
      }
